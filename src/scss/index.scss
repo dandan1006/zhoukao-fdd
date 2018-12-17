@@ -1,0 +1,56 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    padding: 0 pxTorem(10px);
+    box-sizing: border-box;
+}
+
+.place {
+    @include box_flex;
+    width: 100%;
+    height: pxTorem(50px);
+    border-bottom: 1px solid gray;
+    @include justify(space-between);
+    font-size: pxTorem(20px);
+    font-weight: bold;
+    align-items: center;
+}
+
+.time {
+    @include box_flex;
+    width: 100%;
+    height: pxTorem(50px);
+    border-bottom: 1px solid gray;
+    align-items: center;
+    font-weight: bold;
+    font-size: pxTorem(18px);
+}
+
+.circle {
+    width: pxTorem(30px);
+    height: pxTorem(30px);
+    background: gray;
+    border-radius: pxTorem(50px);
+}
+
+.circle:hover {
+    .one {
+        background: red;
+        transform: translateX(-90deg)
+    }
+}
+
+.btn {
+    width: 100%;
+    height: pxTorem(50px);
+    line-height: pxTorem(50px);
+    background: lime;
+    color: white;
+    border-radius: pxTorem(50px);
+    border: 0;
+    outline: none;
+    font-size: pxTorem(18px);
+    margin-top: 20px;
+}

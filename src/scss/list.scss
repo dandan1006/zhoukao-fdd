@@ -1,0 +1,46 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: #EEE;
+}
+
+.olList {
+    width: 100%;
+    height: pxTorem(50px);
+    @include box_flex;
+    align-items: center;
+    overflow: hidden;
+    li {
+        margin-left: pxTorem(10px);
+        box-sizing: border-box;
+        padding: pxTorem(10px) pxTorem(15px);
+        border-radius: pxTorem(10px);
+        &:nth-child(1) {
+            background: lime;
+        }
+        &:hover {
+            background: lime;
+        }
+    }
+}
+
+.ulList {
+    width: 100%;
+    li {
+        width: 100%;
+        border-radius: pxTorem(10px);
+        background: white;
+        margin-bottom: pxTorem(8px);
+        .top {
+            @include box_flex;
+            padding: 0 pxTorem(10px);
+            box-sizing: border-box;
+            height: pxTorem(100px);
+            @include justify(space-between);
+            align-items: center;
+            font-size: pxTorem(15px);
+        }
+    }
+}

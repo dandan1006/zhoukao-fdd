@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <ol class="olList">
+            <li>今天</li>
+            <li>今天</li>
+            <li>今天</li>
+            <li>今天</li>
+            <li>今天</li>
+
+
+        </ol>
+        <ul class="ulList">
+            <li>
+                <!-- <div class="top">
+                    <div>
+                        <p>12:45</p>
+                        <p>北京南</p>
+                    </div>
+                    <div>1.20</div>
+                    <div>
+                        <p>12:45</p>
+                        <p>北京南</p>
+                    </div>
+                    <div>553</div>
+                </div> -->
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script src="js/flexible.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    var ul = document.querySelector('.ulList')
+    $.ajax({
+        url: '/api/get/train_tickets',
+        success: function(res) {
+            render(res.msg)
+        }
+    })
+
+    function render(data) {
+        var str = '';
+        data.forEach(function(item) {
+            str += ` <li>
+                <div class="top">
+                    <div>
+                        <p>${item.time1}</p>
+                        <p>${item.place1}</p>
+                    </div>
+                    <div>${item.time3}</div>
+                    <div>
+                        <p>12:45</p>
+                        <p>${item.place2}</p>
+                    </div>
+                    <div>${item.money}起</div>
+                </div>
+            </li>`
+        })
+        ul.innerHTML = str
+    }
+</script>
+
+</html>
